@@ -20,6 +20,9 @@
 		C112A87A1B3EFC5200FD4825 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C112A8791B3EFC5200FD4825 /* AppModel.swift */; };
 		C112A87C1B3F140400FD4825 /* greenvilleparking.gif in Resources */ = {isa = PBXBuildFile; fileRef = C112A87B1B3F140400FD4825 /* greenvilleparking.gif */; };
 		C116DB5C1B3EF12F009564DE /* PayPalMobile in Resources */ = {isa = PBXBuildFile; fileRef = C116DB5B1B3EF12F009564DE /* PayPalMobile */; };
+		C170C02C1B3F413B00DD1B9D /* plusbutton.gif in Resources */ = {isa = PBXBuildFile; fileRef = C170C02B1B3F413B00DD1B9D /* plusbutton.gif */; };
+		C170C02E1B3F414600DD1B9D /* minusbutton.gif in Resources */ = {isa = PBXBuildFile; fileRef = C170C02D1B3F414600DD1B9D /* minusbutton.gif */; };
+		C170C0301B3F42A400DD1B9D /* greenvilleparking(1).gif in Resources */ = {isa = PBXBuildFile; fileRef = C170C02F1B3F42A400DD1B9D /* greenvilleparking(1).gif */; };
 		C175F6F31B3E248500D4241E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C175F6F21B3E248500D4241E /* AppDelegate.swift */; };
 		C175F6F51B3E248500D4241E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C175F6F41B3E248500D4241E /* ViewController.swift */; };
 		C175F6F81B3E248500D4241E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C175F6F61B3E248500D4241E /* Main.storyboard */; };
@@ -54,6 +57,9 @@
 		C112A8791B3EFC5200FD4825 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		C112A87B1B3F140400FD4825 /* greenvilleparking.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = greenvilleparking.gif; sourceTree = "<group>"; };
 		C116DB5B1B3EF12F009564DE /* PayPalMobile */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PayPalMobile; sourceTree = "<group>"; };
+		C170C02B1B3F413B00DD1B9D /* plusbutton.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plusbutton.gif; sourceTree = "<group>"; };
+		C170C02D1B3F414600DD1B9D /* minusbutton.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = minusbutton.gif; sourceTree = "<group>"; };
+		C170C02F1B3F42A400DD1B9D /* greenvilleparking(1).gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "greenvilleparking(1).gif"; sourceTree = "<group>"; };
 		C175F6ED1B3E248500D4241E /* ImagineUpstateHackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagineUpstateHackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C175F6F11B3E248500D4241E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C175F6F21B3E248500D4241E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +137,10 @@
 				C112A8791B3EFC5200FD4825 /* AppModel.swift */,
 				C175F6F61B3E248500D4241E /* Main.storyboard */,
 				C112A8731B3EF95400FD4825 /* lots.json */,
+				C170C02B1B3F413B00DD1B9D /* plusbutton.gif */,
+				C170C02D1B3F414600DD1B9D /* minusbutton.gif */,
 				C175F6F91B3E248500D4241E /* Images.xcassets */,
+				C170C02F1B3F42A400DD1B9D /* greenvilleparking(1).gif */,
 				C175F6FB1B3E248500D4241E /* LaunchScreen.xib */,
 				C112A87B1B3F140400FD4825 /* greenvilleparking.gif */,
 				C175F6F01B3E248500D4241E /* Supporting Files */,
@@ -245,11 +254,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C170C0301B3F42A400DD1B9D /* greenvilleparking(1).gif in Resources */,
 				C112A87C1B3F140400FD4825 /* greenvilleparking.gif in Resources */,
 				C175F6F81B3E248500D4241E /* Main.storyboard in Resources */,
 				C175F6FD1B3E248500D4241E /* LaunchScreen.xib in Resources */,
+				C170C02E1B3F414600DD1B9D /* minusbutton.gif in Resources */,
 				C112A8741B3EF95400FD4825 /* lots.json in Resources */,
 				C175F6FA1B3E248500D4241E /* Images.xcassets in Resources */,
+				C170C02C1B3F413B00DD1B9D /* plusbutton.gif in Resources */,
 				C116DB5C1B3EF12F009564DE /* PayPalMobile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

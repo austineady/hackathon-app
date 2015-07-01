@@ -15,6 +15,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var spotsAvailLabel: UILabel!
   @IBOutlet weak var logoView: UIImageView!
   
+  @IBOutlet weak var currentVendor: UILabel!
 
   
   @IBOutlet weak var bgImage: UIImageView!
@@ -29,9 +30,9 @@ class ViewController: UIViewController {
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = myColor
     
+    currentVendor.text = "Current Vendor: Main St."
     
-    
-    bgImage.image = UIImage(named:"greenvilleparking.gif")!
+    bgImage.image = UIImage(named:"greenvilleparking(1).gif")!
   
     DataManager.getTopAppsDataFromFileWithSuccess { (data) -> Void in
       // Get the number 1 app using optional binding and NSJSONSerialization
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
         options: NSJSONReadingOptions.AllowFragments,
         error:&parseError)
       
-      println ("this runs")
+      
       //2
       if let topApps = parsedObject as? NSDictionary {
         println("this runs2")
@@ -60,6 +61,9 @@ class ViewController: UIViewController {
         }
       }
     }
+  
+  
+  
   }
 
   override func didReceiveMemoryWarning() {
@@ -78,6 +82,5 @@ class ViewController: UIViewController {
     spotsAvailLabel!.text = "Spots Available: \(numOpenSpots)"
     
   }
-  
 }
 

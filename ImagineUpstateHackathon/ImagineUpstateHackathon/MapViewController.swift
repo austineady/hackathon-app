@@ -15,9 +15,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var spotsAvailLabel: UILabel!
+  @IBOutlet weak var lotTitleLabel: UILabel!
   
-  let regionRadius: CLLocationDistance = 10000
+  let regionRadius: CLLocationDistance = 8000
   
+  let myColor:UIColor = UIColor(red: 76/255.0, green: 175/255.0, blue: 80/255.0, alpha: 1.0)
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -25,34 +27,31 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     let startingViewLocation = CLLocation(latitude: 34.8444, longitude: -82.3856)
     // Do any additional setup after loading the view.
     
-
+    self.view.backgroundColor = myColor
+    
     
     
     centerMapOnLocation(startingViewLocation)
-    let point = ParkingLocation(title: "BiLo Center", locationName: "BiLo Center", coordinate: CLLocationCoordinate2D(latitude: 34.8528, longitude:-82.3915), spotsAvail: 0, maxSpots: 0, filledSpots: 0, price: 10)
-    
+    let point = ParkingLocation(title: "Willard St", locationName: "Garage", coordinate: CLLocationCoordinate2D(latitude: 34.8528, longitude:-82.415), spotsAvail: 35, maxSpots: 50, filledSpots: 15, price: 7)
     mapView.delegate = self
-    
     mapView.addAnnotation(point)
     
-//    let annotation = MKPointAnnotation()
-//    annotation.coordinate = CLLocationCoordinate2D(latitude: 34.8528, longitude:-82.3915)
-//    annotation.title = "Bon Secours Wellness"
-//    annotation.subtitle = "Not a parking lot"
-//    mapView.addAnnotation(annotation)
-//    println("worked")
+    let point2 = ParkingLocation(title: "Wade Hampton", locationName: "Private Lot", coordinate: CLLocationCoordinate2D(latitude: 34.8728, longitude:-82.3715), spotsAvail: 6, maxSpots: 24, filledSpots: 18, price: 9)
+    mapView.delegate = self
+    mapView.addAnnotation(point2)
     
+    let point3 = ParkingLocation(title: "Peace Center", locationName: "Vendor Lot", coordinate: CLLocationCoordinate2D(latitude: 34.8628, longitude:-82.3915), spotsAvail: 14, maxSpots: 17, filledSpots: 3, price: 10)
+    mapView.delegate = self
+    mapView.addAnnotation(point3)
     
+    let point4 = ParkingLocation(title: "291", locationName: "Overnight", coordinate: CLLocationCoordinate2D(latitude: 34.8828, longitude:-82.3915), spotsAvail: 0, maxSpots: 20, filledSpots: 20, price: 15)
+    mapView.delegate = self
+    mapView.addAnnotation(point4)
     
+    let point5 = ParkingLocation(title: "Cleveland St", locationName: "Weekend Parking", coordinate: CLLocationCoordinate2D(latitude: 34.8328, longitude:-82.3815), spotsAvail: 50, maxSpots: 0, filledSpots: 0, price: 8)
+    mapView.delegate = self
+    mapView.addAnnotation(point5)
     
-    
-    
-    
-//    var localNotification: UILocalNotification = UILocalNotification()
-//    localNotification.alertAction = "Testing notifications on iOS8"
-//    localNotification.alertBody = "Woww it works!!"
-//    localNotification.fireDate = NSDate(timeIntervalSinceNow: 2)
-//    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
   }
   
   
@@ -109,6 +108,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
       let location = view.annotation as! ParkingLocation
       
       println ("\(location.title) testing ")
+      lotTitleLabel.text = "\(location.title) |"
       priceLabel.text = "$\(location.price)"
       if location.spotsAvail < 1 {
         spotsAvailLabel.text = "SPOTS UNAVAILABLE"
@@ -121,12 +121,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
   
   @IBAction func makeReservationButtonPressed(sender: UIButton) {
     let alertController = UIAlertController(title: "You've snagged a spot!", message:
-      "You have secured a spot at this parking garage.", preferredStyle: UIAlertControllerStyle.Alert)
+      "You have secured a spot at this parking lot for 15 minutes.", preferredStyle: UIAlertControllerStyle.Alert)
     alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
     
     sleep(1)
     
     self.presentViewController(alertController, animated: true, completion: nil)
+    
     
     
     
