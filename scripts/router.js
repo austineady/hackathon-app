@@ -23,12 +23,20 @@ var Router = Backbone.Router.extend({
     'business/:id/edit': 'editForm',
     'confirmation': 'confirmation',
     'attendant/reservations': 'checkReservations'
+
   },
 
   initialize: function(){
     this.reservations = new ReservationCollection();
+
     this.lots = new LotsCollection();
     this.lots.fetch();
+
+
+
+
+
+
   },
 
   index: function() {
@@ -99,17 +107,16 @@ var Router = Backbone.Router.extend({
   },
 
   attendant: function(){
-    $('#app').html(new AttendantView().el);
+    this.reservations.fetch().then(function(){
+
+    $('#app').html(new AttendantView({collection:this.reservations}).el);
+    }.bind(this));
   },
 
   checkReservations: function() {
 
-    //this.reservations.add([
-    //  {id: 1, name: 'Johnson'},
-    //  {id: 2, name: 'Hackett'}
-    //]);
-    //console.log(this.reservations);
     this.reservations.fetch().then(function(){
+
       $('#app').html(new AttendantReservationView({collection: this.reservations}).el);
     }.bind(this));
 
@@ -122,6 +129,7 @@ var Router = Backbone.Router.extend({
   		this.UserView = new UserView({collection: this.lots});
   		$('#app').html(this.UserView.el);
   	}.bind(this));
+
   },
 
   confirmation: function() {
@@ -129,6 +137,8 @@ var Router = Backbone.Router.extend({
       this.ConfirmationView = new ConfirmationView({collection: this.reservations, data: this.lots});
       $('#app').html(this.ConfirmationView.el);
     }.bind(this));
+
+	// console.log('hi');
   }
 
 });

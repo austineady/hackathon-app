@@ -12,8 +12,8 @@ var AttendantView =Backbone.View.extend({
         this.carMax = 55;
 
         this.cars = 30;
-        this.reserved= 3;
-        this.available = this.calculateAvailable()
+        this.reserved= this.collection.length;
+        this.available = this.calculateAvailable();
 
         this.render();
     },

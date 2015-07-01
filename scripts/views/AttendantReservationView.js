@@ -5,12 +5,12 @@ import ReservationSingleView from './ReservationSingleView';
 export default Backbone.View.extend({
     template: JST.attendantReservations,
     events: {
-        'click .attendant-list-item': 'checkReservation'
+        //'click .attendant-list-item': 'checkReservation'
     },
 
     initialize: function(){
         this.render();
-       console.log(this.collection.length);
+
     },
     render:function(){
         this.$el.html(this.template());
@@ -21,6 +21,7 @@ export default Backbone.View.extend({
 
         this.children = this.collection.map(function(child) {
             var view = new ReservationSingleView({
+                collection: this.collection,
                 model: child
             });
 

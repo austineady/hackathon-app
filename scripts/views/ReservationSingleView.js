@@ -6,7 +6,7 @@ export default Backbone.View.extend({
     tagName: 'li',
     className: 'attendant-list-item',
     events: {
-        'click .attendant-list-item': 'checkReservation'
+        'click': 'dude'
     },
 
     initialize:function(){
@@ -14,11 +14,28 @@ export default Backbone.View.extend({
         this.render();
     },
     render:function(){
-        console.log('what',this.model);
         this.$el.html(this.template(this.model.toJSON()));
     },
-    checkReservation: function(){
-        console.log('hi');
+    dude: function(){
+        this.id = this.model.toJSON().id;
+        console.log(this.id);
+        console.log(this.collection);
+
+        this.aModel = _.filter(this.collection.models, function(param){
+            //console.log(param);
+            if(param.id===this.id) {
+                return param
+            };
+        
+        }.bind(this));
+
+        //console.log(model);
+        //this.collection.
+
+        //console.log('collection',this.collection);
+        //console.log('model', this.model);
+        //var id = this.model.attributes.id;
+        //this.collection.destroy(this.aModel.id);
     }
 
 });
